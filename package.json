@@ -1,0 +1,6 @@
+{
+  "name": "sample-legacy-risky",
+  "version": "2.4.1",
+  "private": true,
+  "scripts": {"start": "node app.js"}
+}

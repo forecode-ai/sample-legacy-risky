@@ -1,0 +1,18 @@
+name: label-pr
+
+# DELIBERATELY UNSAFE PATTERN, made inert: an empty token, a condition that is always false, and the workflow is
+# disabled in the repository. It exists only so ForeCode's pull_request_target guardrail has something to find.
+on:
+  pull_request_target:
+
+permissions: {}
+
+jobs:
+  label:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - run: npm install && npm run label
